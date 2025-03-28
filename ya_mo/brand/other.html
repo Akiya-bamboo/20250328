@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他作品 - Mamo Seal</title>
+    <link rel="stylesheet" href="other.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./imge/tired.jpg" alt="Seal Logo" class="logo-img">
+                <span>Mamo Seal</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">返回首頁</a>
+            </div>
+        </div>
+    </nav>
+    <!-- 在 nav 後面添加音樂控制器 -->
+    <div class="music-controller">
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="./sound/seredris - Daylight （纯音乐）.mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <!-- 主要內容區塊 -->
+    <div class="main-container">
+        <div class="diagonal-section">
+            <div class="diagonal-content">
+                <div class="text-content">
+                    <h2>作品集</h2>
+                    <p>這裡有著許多回憶，與我的繪畫作品及成長歷程</p>
+                    <p>
+                        There are many memories here, related to my paintings and growth process</p>
+                </div>
+                <div class="diagonal-image">
+                    <img src="./imge/paint.png" alt="創作圖片">
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-section">
+            <div class="gallery-left">
+                <div class="gallery-item item1">
+                    <img src="./imge/water.png" alt="作品1">
+                </div>
+                <div class="gallery-item item2">
+                    <img src="./imge/woo.png" alt="作品2">
+                </div>
+                <div class="gallery-item item3">
+                    <img src="./imge/fly.png" alt="作品3">
+                </div>
+            </div>
+            <div class="gallery-right">
+                <div class="work-intro">
+                    <h2>創作歷程</h2>
+                    <div class="intro-text">
+                        <p>這裡關於我的作品</p>
+                        <p>這些作品包含了各種不同的主題：</p>
+                        <ul>
+                            <li>麥克筆創作</li>
+                            <li>素描作品</li>
+                            <li>人物設計</li>
+                        </ul>
+                        <p>透過不同作品，了解不同的樂趣</p>
+                    </div>
+                </div>
+                <div class="splash-background">
+                    <div class="splash splash1"></div>
+                    <div class="splash splash2"></div>
+                    <div class="splash splash3"></div>
+                    <div class="splash splash4"></div>
+                    <div class="splash splash5"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D 翻轉卡片區 -->
+        <div class="flip-cards">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="./imge/p1.png" alt="作品5">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>粉色的隨意</h3>
+                        <p>以最隨興的一筆一畫呈現</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="./imge/p2.png" alt="作品6">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>餓食</h3>
+                        <p>好想好想吃薯餅3am</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="./imge/p3.jpg" alt="作品6">
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>我直視你</h3>
+                        <p>個性的強烈紅色，是熱情</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 在 body 結束標籤前添加 JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const musicBtn = document.getElementById('musicToggle');
+            const bgMusic = document.getElementById('bgMusic');
+            let isPlaying = false;
+
+            musicBtn.addEventListener('click', function() {
+                if (isPlaying) {
+                    bgMusic.pause();
+                    musicBtn.classList.remove('playing');
+                } else {
+                    bgMusic.play();
+                    musicBtn.classList.add('playing');
+                }
+                isPlaying = !isPlaying;
+            });
+        });
+    </script>
+</body>
+</html>
