@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamo Seal - 海豹品牌故事</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./imge/tired.jpg" alt="Seal Logo" class="logo-img">
+                <span>Mamo Seal</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home">首頁</a>
+                <a href="#story">品牌故事</a>
+                <a href="#products">作品介紹</a>
+                <a href="#contact">聯絡我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 在 nav 後面添加音樂控制器 -->
+    <div class="music-controller">
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="./sound/seredris - Daylight （纯音乐）.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- 首頁區塊 -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="./imge/tired.jpg" alt="Seal Brand Logo" class="hero-logo">
+            <h1>Mamo Seal</h1>
+            <p>懶懶海豹陪伴您的每一天</p>
+        </div>
+        <div class="waves">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+        </div>
+    </section>
+
+    <!-- 品牌故事區塊 -->
+    <section id="story" class="story-section">
+        <h2>品牌故事</h2>
+        <div class="story-content">
+            <img src="./imge/close-seal.jpg" alt="Brand Story Image">
+            <div class="story-text">
+                <p>Mamo Seal 源於對海洋生物的熱愛，我們希望通過可愛的海豹元素，傳遞快樂與溫暖。</p>
+                <p>創立於2024年，我們致力於將海豹的可愛與療癒特質融入日常生活中。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品介紹區塊 -->
+    <section id="products" class="products-section">
+        <h2>作品介紹</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <a href="#draw">
+                    <img src="./imge/462586214_954186909894358_2787363491025955737_n.jpg" alt="Product 1">
+                    <h3>創作天地</h3>
+                    <p>動動手手畫畫看</p>
+                </a>
+            </div>
+            <div class="product-card">
+                <a href="#creation">
+                 <img src="./imge/462566912_1561239341179145_7651019615713925144_n.jpg" alt="Product 2">
+                 <h3>作者的創作故事</h3>
+                 <p>那個故事還沒結束</p>
+                </a>
+            </div>
+            <div class="product-card">
+                <a href="./turn.html">
+                 <img src="./imge/462574865_1611609812766016_8961804805682218691_n.jpg" alt="Product 3">
+                 <h3>海豹Mamo</h3>
+                 <p>關於Mamo的各種狀態</p>
+                 </a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="draw" class="draw-section">
+        <h2>創作天地</h2>
+        <div class="canvas-container">
+            <div class="tools">
+                <input type="color" id="stroke" name="stroke" value="#000000">
+                <input type="range" id="lineWidth" name="lineWidth" min="1" max="20" value="5">
+                <span id="lineWidthLabel">5px</span>
+                <button id="clear">清除畫布</button>
+                <button id="save">儲存作品</button>
+                <a href="./gallery.html" class="gallery-link">
+                    <button>查看作品集</button>
+                </a>
+            </div>
+            <canvas id="drawing-board"></canvas>
+        </div>
+    </section>
+
+    <!-- 添加創作契機區塊 -->
+    <section id="creation" class="creation-section">
+        <h2>作者的創作故事</h2>
+        <div class="content-container">
+            <!-- 左側內容介紹 -->
+            
+            <div class="content-box">
+                <h2>故事歷程</h2>
+                <div class="description">
+                    <p>小時候腦袋總有一個屬於自己的幻想小天地，總愛把天馬行空的幻想呈現於紙張中，在這過程中發現對畫畫的喜愛。</p>
+                    <p>畫圖像是一種毒藥，讓人上癮，然而畫什麼圖是有區分的，有些時候是為了滿足自己的慾望，但有些是因為作業而身不由己，當然你現在繼續下一頁的作品可能不只有海豹，也會看到我的其他作品。</p>
+                </div>
+            </div>
+
+            <!-- 右側照片輪播 -->
+            <div class="image-slider">
+                <div class="slider-container">
+                    <img src="./imge/sea.jpg" alt="作品1" class="active">
+                    <img src="./imge/furit.png" alt="作品2">
+                    <img src="./imge/point.png" alt="作品3">
+                </div>
+                 <!-- 其他作品連結 -->
+                <div class="next-work">
+                   <a href="./other.html" class="next-work-link">
+                     其他作品
+                     <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+       
+    </section>
+
+    <!-- 聯絡我們區塊 -->
+    <section id="contact" class="contact-section">
+        <h2>聯絡我們</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> Email: slp6518127@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 電話: (02) 1234-5678</p>
+                <p><i class="fas fa-map-marker-alt"></i> 地址: 高雄��海豹路227號</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/seal_0227_bamboo/" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="./imge/tired.jpg" alt="Seal Logo" class="footer-logo-img">
+                <span>Mamo Seal</span>
+            </div>
+            <div class="footer-links">
+                <a href="#home">首頁</a>
+                <a href="#story">品牌故事</a>
+                <a href="#products">商品介紹</a>
+                <a href="#contact">聯絡我們</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Mamo Seal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('drawing-board');
+            const ctx = canvas.getContext('2d');
+            const strokeColor = document.getElementById('stroke');
+            const lineWidth = document.getElementById('lineWidth');
+            const lineWidthLabel = document.getElementById('lineWidthLabel');
+            const clearBtn = document.getElementById('clear');
+            const saveBtn = document.getElementById('save');
+            
+            // 設置畫布大小
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
+
+            // 更新線寬顯示
+            lineWidth.addEventListener('input', function() {
+                lineWidthLabel.textContent = this.value + 'px';
+            });
+
+            // 畫畫功能
+            function draw(e) {
+                if (!isDrawing) return;
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(x, y);
+                ctx.strokeStyle = strokeColor.value;
+                ctx.lineWidth = lineWidth.value;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+
+                [lastX, lastY] = [x, y];
+            }
+
+            canvas.addEventListener('mousedown', (e) => {
+                isDrawing = true;
+                const rect = canvas.getBoundingClientRect();
+                [lastX, lastY] = [e.clientX - rect.left, e.clientY - rect.top];
+            });
+
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', () => isDrawing = false);
+            canvas.addEventListener('mouseout', () => isDrawing = false);
+
+            // 清除畫布
+            clearBtn.addEventListener('click', () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            });
+
+            // 儲存作品
+            saveBtn.addEventListener('click', () => {
+                const image = canvas.toDataURL('image/png');
+                let savedArtworks = JSON.parse(localStorage.getItem('artworks') || '[]');
+                savedArtworks.push({
+                    id: Date.now(),
+                    image: image,
+                    date: new Date().toISOString()
+                });
+                localStorage.setItem('artworks', JSON.stringify(savedArtworks));
+                alert('作品已儲存！');
+            });
+        });
+    </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const images = document.querySelectorAll('.slider-container img');
+                let currentIndex = 0;
+    
+                function nextImage() {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add('active');
+                }
+    
+                // 每5秒切換一次圖片
+                setInterval(nextImage, 5000);
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const nextWork = document.querySelector('.next-work');
+                const sliderContainer = document.querySelector('.slider-container');
+                
+                // 初始隱藏按鈕
+                nextWork.style.opacity = '0';
+                nextWork.style.visibility = 'hidden';
+
+                // 創建觀察器
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // 當滾動到照片區域時顯示按鈕
+                            nextWork.style.opacity = '1';
+                            nextWork.style.visibility = 'visible';
+                        } else {
+                            // 當離開照片區域時隱藏按鈕
+                            nextWork.style.opacity = '0';
+                            nextWork.style.visibility = 'hidden';
+                        }
+                    });
+                }, {
+                    threshold: 0.2 // 當 20% 的元素可見時觸發
+                });
+
+                // 開始觀察照片容器
+                observer.observe(sliderContainer);
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const sections = document.querySelectorAll('.story-section, .products-section, .draw-section, .creation-section, .contact-section');
+                
+                // 為每個區塊添加初始 class
+                sections.forEach(section => {
+                    section.classList.add('fade-in-section');
+                });
+
+                // 創建觀察器
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                        }
+                    });
+                }, {
+                    threshold: 0.15  // 當 15% 的元素可見時觸發
+                });
+
+                // 開始觀察所有區塊
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const musicBtn = document.getElementById('musicToggle');
+                const bgMusic = document.getElementById('bgMusic');
+                let isPlaying = false;
+
+                musicBtn.addEventListener('click', function() {
+                    if (isPlaying) {
+                        bgMusic.pause();
+                        musicBtn.classList.remove('playing');
+                    } else {
+                        bgMusic.play();
+                        musicBtn.classList.add('playing');
+                    }
+                    isPlaying = !isPlaying;
+                });
+            });
+        </script>
+</body>
+</html> 

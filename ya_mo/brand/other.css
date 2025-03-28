@@ -1,0 +1,634 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #E8F3F4;
+    min-height: 100vh;
+}
+
+/* 導航欄樣式 */
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(64, 151, 154, 0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    background-color: #6FB4B7;
+    border-radius: 4px;
+}
+
+/* 波浪區塊樣式 */
+.wave-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./imge/tired.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: 0;
+}
+
+.wave-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+}
+
+.wave-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wave-content p {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,149.3C960,139,1056,149,1152,154.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+    background-size: 1440px 100px;
+}
+
+.wave1 {
+    animation: wave 20s cubic-bezier(0.36, 0, 0.64, 1) infinite alternate;
+    z-index: 4;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+.wave2 {
+    animation: wave2 15s cubic-bezier(0.36, 0, 0.64, 1) infinite alternate;
+    z-index: 3;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+.wave3 {
+    animation: wave 18s cubic-bezier(0.36, 0, 0.64, 1) infinite alternate;
+    z-index: 2;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+.wave4 {
+    animation: wave2 12s cubic-bezier(0.36, 0, 0.64, 1) infinite alternate;
+    z-index: 1;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+@keyframes wave {
+    0% {
+        background-position: 0;
+        transform: translateY(0);
+    }
+    100% {
+        background-position: 1440px;
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes wave2 {
+    0% {
+        background-position: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        background-position: -1440px;
+        transform: translateY(5px);
+    }
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* 調整主要內容區的樣式 */
+.main-container {
+    padding-top: 50px;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .wave-section {
+        height: 80vh;
+    }
+
+    .wave-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .wave-content h1 {
+        font-size: 2.5em;
+    }
+
+    .wave-content p {
+        font-size: 1.2em;
+    }
+}
+
+/* 作品展示區域樣式 */
+.gallery-section {
+    display: flex;
+    padding: 100px 50px;
+    gap: 50px;
+    background-color: #fff;
+}
+
+.gallery-left {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 不規則大小的排列 */
+.item1 {
+    grid-column: 1 / 3;  /* 跨越兩列 */
+    grid-row: 1 / 2;
+    height: 300px;
+}
+
+.item2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;  /* 跨越兩行 */
+    height: 400px;
+}
+
+.item3 {
+    grid-column: 1 / 5;
+    grid-row: 2 / 4;
+    height: 300px;
+    width: 300px;
+}
+
+.gallery-right {
+    flex: 1;
+    padding: 50px;
+}
+
+.work-intro {
+    max-width: 500px;
+}
+
+.work-intro h2 {
+    font-size: 2.5em;
+    color: #40979a;
+    margin-bottom: 30px;
+}
+
+.intro-text {
+    color: #666;
+    line-height: 1.8;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+}
+
+.intro-text ul {
+    list-style-position: inside;
+    margin-bottom: 20px;
+}
+
+.intro-text li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+/* 響應式調整 */
+@media (max-width: 1024px) {
+    .gallery-section {
+        flex-direction: column;
+        padding: 50px 20px;
+    }
+
+    .gallery-left {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .item1 {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        height: 250px;
+    }
+
+    .item2 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        height: 300px;
+    }
+
+    .item3 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-left {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-item {
+        grid-column: 1 / 2 !important;
+        grid-row: auto !important;
+        height: 300px !important;
+    }
+}
+
+
+/* 3D 翻轉卡片樣式 */
+.flip-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+}
+
+.flip-card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background: #40979a;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 修改潑灑效果樣式 */
+.splash-background {
+    position: relative;
+    width: 100%;
+    height: 200px;  /* 調整高度 */
+    margin-top: 30px;  /* 添加上方間距 */
+    background: transparent;  /* 改為透明背景 */
+    
+}
+
+.splash {
+    position: absolute;
+    border-radius: 50%;
+    background: #6FB4B7;
+    animation: splashAnimation 4s infinite;
+    opacity: 0.4;  /* 降低透明度 */
+}
+
+/* 調整各個潑灑元素的位置和大小 */
+.splash1 {
+    width: 100px;
+    height: 100px;
+    left: 5%;
+    top: 10%;
+    animation-delay: 0s;
+}
+
+.splash2 {
+    width: 80px;
+    height: 80px;
+    right: 10%;
+    top: 20%;
+    animation-delay: 0.5s;
+    background: #40979a;
+}
+
+.splash3 {
+    width: 90px;
+    height: 90px;
+    left: 20%;
+    bottom: 10%;
+    animation-delay: 1s;
+    background: #8ec9cb;
+}
+
+.splash4 {
+    width: 70px;
+    height: 70px;
+    right: 25%;
+    top: 15%;
+    animation-delay: 1.5s;
+    background: #40979a;
+}
+
+.splash5 {
+    width: 85px;
+    height: 85px;
+    left: 30%;
+    top: 30%;
+    animation-delay: 2s;
+}
+
+@keyframes splashAnimation {
+    0% {
+        transform: scale(0) translate(0, 0);
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.2) translate(50px, -50px);
+        opacity: 0;
+    }
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .splash-background {
+        height: 300px;
+    }
+    
+    .splash {
+        transform: scale(0.7);
+    }
+}
+
+/* 添加斜切區塊樣式 */
+.diagonal-section {
+    position: relative;
+    padding: 100px 0;
+    background: #E8F3F4;
+    overflow: hidden;
+}
+
+.diagonal-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    background: #ffffff;
+    transform: skewX(-15deg) translateX(10%);
+}
+
+.diagonal-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1;
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 100px;
+}
+
+.text-content h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.text-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.diagonal-image {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.diagonal-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.diagonal-image img:hover {
+    transform: rotate(0deg);
+}
+
+/* 響應式調整 */
+@media (max-width: 968px) {
+    .diagonal-content {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .text-content {
+        padding-right: 0;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .diagonal-section::after {
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+        transform: skewY(-15deg) translateY(10%);
+    }
+}
+
+/* 音樂控制器樣式 */
+.music-controller {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.music-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-btn i {
+    font-size: 20px;
+    color: #40979a;
+    transition: transform 0.3s ease;
+}
+
+.music-btn.playing {
+    background: #40979a;
+}
+
+.music-btn.playing i {
+    color: #ffffff;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .music-controller {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .music-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .music-btn i {
+        font-size: 16px;
+    }
+}
+
+
