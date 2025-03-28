@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創作契機 - Mamo Seal</title>
+    <link rel="stylesheet" href="creat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./imge/tired.jpg" alt="Seal Logo" class="logo-img">
+                <span>Mamo Seal</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">返回首頁</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容區 -->
+    <div class="content-container">
+        <!-- 左側內容介紹 -->
+        <div class="content-box">
+            <h2>故事歷程</h2>
+            <div class="description">
+                <p>小時候腦袋總有一個屬於自己的幻想小天地，總愛把天馬行空的幻想呈現於紙張中，在這過程中發現對畫畫的喜愛。</p>
+                <p>畫圖像是一種毒藥，讓人上癮，然而畫什麼圖是有區分的，有些時候是為了滿足自己的慾望，但有些是因為作業而身不由己，當然你現在繼續下一頁的作品可能不只有平面的圖畫和海豹，也會看到我至今為止我的其他作品。</p>
+            </div>
+        </div>
+
+        <!-- 右側照片輪播 -->
+        <div class="image-slider">
+            <div class="slider-container">
+                <img src="./imge/462586214_954186909894358_2787363491025955737_n.jpg" alt="作品1" class="active">
+                <img src="./imge/462566912_1561239341179145_7651019615713925144_n.jpg" alt="作品2">
+                <img src="./imge/462574865_1611609812766016_8961804805682218691_n.jpg" alt="作品3">
+            </div>
+        </div>
+    </div>
+
+    <!-- 其他作品連結 -->
+    <div class="next-work">
+        <a href="./other.html" class="next-work-link">
+            其他作品
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.slider-container img');
+            let currentIndex = 0;
+
+            function nextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            // 每5秒切換一次圖片
+            setInterval(nextImage, 5000);
+        });
+    </script>
+</body>
+</html> 
